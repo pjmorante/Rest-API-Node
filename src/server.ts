@@ -1,11 +1,8 @@
 import express from 'express';
+import router from './router';
 
 const server = express();
 
-//Routing
-
-server.get('/', (req, res) => {
-  res.send("Hello Mother...");
-})
+server.use('/', router);
 
 export default server;
