@@ -4,9 +4,14 @@
     "rootDir": "./src",
     "strict": false,
     "lib": ["esnext"],
+    "target": "ESNext",
+    "moduleResolution": "NodeNext",
+    "module": "NodeNext",
     "sourceMap": true,
     "esModuleInterop": true,
-    "declaration": true
+    "declaration": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
   },
   "include": ["src/**/*.ts"]
 }

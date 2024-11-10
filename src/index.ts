@@ -1,7 +1,7 @@
 import server from "./server";
 
-const PORT = 4000;
+const PORT = process.env.PORT;
 
-server.listen(4000, () => {
+server.listen(PORT, () => {
   console.log(`REST API running on port ${PORT}`);
-})
+});
