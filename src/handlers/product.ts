@@ -4,7 +4,7 @@ import Product from "../models/Product.model";
 export const getProducts = async (req: Request, res: Response) => {
   try {
     const products = await Product.findAll({
-      attributes: { exclude: ['createdAt', 'updatedAt', 'availability'] },
+      attributes: { exclude: ['createdAt', 'updatedAt'] },
     });
     res.json({data: products});
   } catch (error) {
@@ -16,7 +16,7 @@ export const getProductById = async (req: Request, res: Response) => {
   try {
     const {id} = req.params;
     const product = await Product.findByPk(id, {
-      attributes: { exclude: ['createdAt', 'updatedAt', 'availability'] },
+      attributes: { exclude: ['createdAt', 'updatedAt'] },
     });
     if (!product) {
       res.status(404).json({
