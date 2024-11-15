@@ -2,6 +2,7 @@ import express from 'express';
 import router from './router';
 import db from './config/db';
 import cors, { CorsOptions } from 'cors';
+import morgan from 'morgan';
 
 //Database connection
 
@@ -32,6 +33,8 @@ server.use(cors(corsOptions));
 
 //Leer datos de formularios
 server.use(express.json());
+
+server.use(morgan('dev'));
 
 server.use('/api/products', router);
 
